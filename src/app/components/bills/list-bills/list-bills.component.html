@@ -1,0 +1,30 @@
+<h4 class="text-center">
+    Bill list
+</h4>
+<hr>
+<div class="row" style="margin-top: 40px;">
+    <div class="col-lg-6">
+        <div class="alert alert-success sizeAlert">
+            Budget: <strong>${{budget}}</strong>
+        </div>
+        
+    </div>
+    <div class="col-lg-6">
+        <div class=" sizeAlert" [ngClass]="applyRemainingColor()">
+            Remaining: <strong>${{remaining}}</strong>
+        </div>
+        
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between " *ngFor="let bill of listBills">
+                <strong>{{bill.description}}</strong>
+                <span class="badge rounded-pill bg-secondary">${{bill.amount}}</span>
+            </li>
+        </ul>
+    </div>
+</div>
